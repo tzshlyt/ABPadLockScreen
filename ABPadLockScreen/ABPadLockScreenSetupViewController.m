@@ -73,8 +73,9 @@
 
 - (void)setDefaultTexts
 {
-    _pinNotMatchedText = NSLocalizedString(@"Pincode did not match.", @"");
-    _pinConfirmationText = NSLocalizedString(@"Re-enter your new pincode", @"");
+    NSBundle *bundle = [NSBundle bundleWithPath:@"/Library/Application Support/MyLN.bundle"];
+    _pinNotMatchedText = NSLocalizedStringFromTableInBundle(@"Pincode did not match.", @"LN", bundle, nil);
+    _pinConfirmationText = NSLocalizedStringFromTableInBundle(@"Re-enter your new pincode", @"LN", bundle, nil);
 }
 
 #pragma mark -
@@ -82,7 +83,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [lockScreenView.cancelButton addTarget:self action:@selector(cancelButtonSelected:) forControlEvents:UIControlEventTouchUpInside];    
+    [lockScreenView.cancelButton addTarget:self action:@selector(cancelButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark -

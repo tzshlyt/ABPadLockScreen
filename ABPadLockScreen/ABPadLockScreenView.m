@@ -81,6 +81,8 @@
     if (self)
     {
         [self setDefaultStyles];
+        
+        NSBundle *bundle = [NSBundle bundleWithPath:@"/Library/Application Support/MyLN.bundle"];
 		
 		_contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, MIN(frame.size.height, 568.0f))];
 		_contentView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
@@ -90,7 +92,7 @@
         _requiresRotationCorrection = NO;
         
         _enterPasscodeLabel = [self standardLabel];
-        _enterPasscodeLabel.text = NSLocalizedString(@"Enter Passcode", @"");
+        _enterPasscodeLabel.text = NSLocalizedStringFromTableInBundle(@"Enter Passcode", @"LN", bundle, nil);
         
         _detailLabel = [self standardLabel];
         
@@ -115,16 +117,16 @@
 		}
 		
 		_cancelButton = [UIButton buttonWithType:buttonType];
-        [_cancelButton setTitle:NSLocalizedString(@"Cancel", @"") forState:UIControlStateNormal];
+        [_cancelButton setTitle:NSLocalizedStringFromTableInBundle(@"Cancel", @"LN", bundle, nil) forState:UIControlStateNormal];
 		_cancelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         
         _deleteButton = [UIButton buttonWithType:buttonType];
-        [_deleteButton setTitle:NSLocalizedString(@"Delete", @"") forState:UIControlStateNormal];
+        [_deleteButton setTitle:NSLocalizedStringFromTableInBundle(@"Delete", @"LN", bundle, nil) forState:UIControlStateNormal];
 		_deleteButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         _deleteButton.alpha = 0.0f;
         
 		_okButton = [UIButton buttonWithType:buttonType];
-		[_okButton setTitle:NSLocalizedString(@"OK", @"") forState:UIControlStateNormal];
+		[_okButton setTitle:NSLocalizedStringFromTableInBundle(@"OK", @"LN", bundle, nil) forState:UIControlStateNormal];
 		_okButton.alpha = 0.0f;
 		_okButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 		
@@ -468,7 +470,7 @@
     
     [self setUpButton:self.buttonZero left:centerButtonLeft top:zeroRowTop];
     
-	CGRect deleteCancelButtonFrame = CGRectMake(rightButtonLeft, zeroRowTop + ABPadButtonHeight + 25, ABPadButtonWidth, 20);
+	CGRect deleteCancelButtonFrame = CGRectMake(rightButtonLeft, zeroRowTop + 25, ABPadButtonWidth, 20);
 	if(!IS_IPHONE5)
 	{
 		//Bring it higher for small device screens

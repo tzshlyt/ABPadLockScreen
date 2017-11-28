@@ -1,0 +1,28 @@
+/* 
+  LN.strings
+  test_tmp
+
+  Created by lan on 2017/11/26.
+  Copyright © 2017年 lancom.lllteam. All rights reserved.
+*/
+
+"Pincode did not match." = "两次输入密码不匹配";
+"Re-enter your new pincode" = "再次输入密码";
+
+"Enter Passcode" = "输入密码";
+"Cancel" = "取消";
+"Delete" = "删除";
+"OK" = "确认";
+
+"You have been locked out." = "密码锁被锁定";
+"attempts left" = "次尝试剩余";
+"attempt left" = "次尝试剩余";
+
+"WeChat Lock" = "微信密码锁";
+"Passcode Lock" = "密码锁定";
+
+"Unfollow" = "未关注";
+"Follow" = "已关注";
+"Follow My Offical Account" = "关注我的公众号";
+
+

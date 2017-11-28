@@ -52,9 +52,11 @@
         _lockScreenDelegate = delegate;
         _remainingAttempts = -1;
         
-        _lockedOutString = NSLocalizedString(@"You have been locked out.", @"");
-        _pluralAttemptsLeftString = NSLocalizedString(@"attempts left", @"");
-        _singleAttemptLeftString = NSLocalizedString(@"attempt left", @"");
+        NSBundle *bundle = [NSBundle bundleWithPath:@"/Library/Application Support/MyLN.bundle"];
+        
+        _lockedOutString = NSLocalizedStringFromTableInBundle(@"You have been locked out.", @"LN", bundle, nil);
+        _pluralAttemptsLeftString = NSLocalizedStringFromTableInBundle(@"attempts left", @"LN", bundle, nil);
+        _singleAttemptLeftString = NSLocalizedStringFromTableInBundle(@"attempt left", @"LN", bundle, nil);
     }
     return self;
 }
